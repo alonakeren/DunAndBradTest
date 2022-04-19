@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DunBModelStoreContainer" CdmEntityContainer="DunBEntities">
+    <EntitySetMapping Name="AGENTS">
+      <EntityTypeMapping TypeName="DunBModel.AGENT">
+        <MappingFragment StoreEntitySet="AGENTS">
+          <ScalarProperty Name="AGENT_CODE" ColumnName="AGENT_CODE" />
+          <ScalarProperty Name="AGENT_NAME" ColumnName="AGENT_NAME" />
+          <ScalarProperty Name="WORKING_AREA" ColumnName="WORKING_AREA" />
+          <ScalarProperty Name="COMMISSION" ColumnName="COMMISSION" />
+          <ScalarProperty Name="PHONE_NO" ColumnName="PHONE_NO" />
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDERS">
+      <EntityTypeMapping TypeName="DunBModel.ORDER">
+        <MappingFragment StoreEntitySet="ORDERS">
+          <ScalarProperty Name="ORD_NUM" ColumnName="ORD_NUM" />
+          <ScalarProperty Name="ORD_AMOUNT" ColumnName="ORD_AMOUNT" />
+          <ScalarProperty Name="ADVANCE_AMOUNT" ColumnName="ADVANCE_AMOUNT" />
+          <ScalarProperty Name="ORD_DATE" ColumnName="ORD_DATE" />
+          <ScalarProperty Name="CUST_CODE" ColumnName="CUST_CODE" />
+          <ScalarProperty Name="AGENT_CODE" ColumnName="AGENT_CODE" />
+          <ScalarProperty Name="ORD_DESCRIPTION" ColumnName="ORD_DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetSumAgentCodeByYear" FunctionName="DunBModel.Store.GetSumAgentCodeByYear">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DunBModel.GetSumAgentCodeByYear_Result">
+          <ScalarProperty Name="AGENT_CODE" ColumnName="AGENT_CODE" />
+          <ScalarProperty Name="SUM_ADVANCE_AMOUNT" ColumnName="SUM_ADVANCE_AMOUNT" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAgentCodeByRowNumber" FunctionName="DunBModel.Store.GetAgentCodeByRowNumber">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DunBModel.GetAgentCodeByRowNumber_Result">
+          <ScalarProperty Name="ORD_NUM" ColumnName="ORD_NUM" />
+          <ScalarProperty Name="ORD_AMOUNT" ColumnName="ORD_AMOUNT" />
+          <ScalarProperty Name="ADVANCE_AMOUNT" ColumnName="ADVANCE_AMOUNT" />
+          <ScalarProperty Name="ORD_DATE" ColumnName="ORD_DATE" />
+          <ScalarProperty Name="CUST_CODE" ColumnName="CUST_CODE" />
+          <ScalarProperty Name="AGENT_CODE" ColumnName="AGENT_CODE" />
+          <ScalarProperty Name="ORD_DESCRIPTION" ColumnName="ORD_DESCRIPTION" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAgentsByQtyOrders" FunctionName="DunBModel.Store.GetAgentsByQtyOrders">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DunBModel.GetAgentsByQtyOrders_Result">
+          <ScalarProperty Name="AGENT_CODE" ColumnName="AGENT_CODE" />
+          <ScalarProperty Name="AGENT_NAME" ColumnName="AGENT_NAME" />
+          <ScalarProperty Name="PHONE_NO" ColumnName="PHONE_NO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
